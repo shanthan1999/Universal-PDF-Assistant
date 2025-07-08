@@ -25,7 +25,7 @@ class Qwen2LLMManager:
     """Manage Qwen2.5 LLM for RAG applications."""
     
     def __init__(self, 
-                 model_name: str = "Qwen/Qwen2.5-1.5B-Instruct",  # Use smaller model by default
+                 model_name: str = "Qwen/Qwen2.5-1]0.5B-Instruct",  # Use smaller model by default
                  device: str = "auto",
                  load_in_4bit: bool = True,
                  max_memory: Optional[Dict] = None):
@@ -358,19 +358,14 @@ class Qwen2LLMManager:
 
 
 # Utility functions for easy model management
-def load_qwen2_model(model_size: str = "1.5B", quantized: bool = True) -> Qwen2LLMManager:
+def load_qwen2_model(model_size: str = "0.5B", quantized: bool = True) -> Qwen2LLMManager:
     """Load Qwen2.5 model with recommended settings."""
     
     model_map = {
-        "0.5B": "Qwen/Qwen2.5-0.5B-Instruct",
-        "1.5B": "Qwen/Qwen2.5-1.5B-Instruct", 
-        "3B": "Qwen/Qwen2.5-3B-Instruct",
-        "7B": "Qwen/Qwen2.5-7B-Instruct",
-        "14B": "Qwen/Qwen2.5-14B-Instruct",
-        "32B": "Qwen/Qwen2.5-32B-Instruct"
+        "0.5B": "Qwen/Qwen2.5-0.5B-Instruct"
     }
     
-    model_name = model_map.get(model_size, model_map["7B"])
+    model_name = model_map.get(model_size, model_map["0.5B"])
     
     # Configure memory limits based on model size
     max_memory = None

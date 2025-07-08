@@ -13,7 +13,7 @@ python-docx>=0.8.11,<2.0.0
 
 # Machine learning (reliable versions)
 scikit-learn>=1.3.0,<2.0.0
-# numpy>=1.24.0,<2.0.0
+numpy>=1.24.0,<2.0.0
 pandas>=1.3.0,<3.0.0
 
 # Core transformers and torch (simplified for compatibility)
